@@ -1,8 +1,15 @@
 import axios from 'axios';
 
-const baseURL =
-  import.meta.env.VITE_API_URL ||
-  (import.meta.env.PROD ? 'https://palakiya-backend.onrender.com/api' : '/api');
+const rawApiUrl = import.meta.env.VITE_API_URL;
+const defaultApiUrl = import.meta.env.PROD
+  ? 'https://palakiya-backend.onrender.com/api'
+  : '/api';
+
+const baseURL = (() => {
+  if (!rawApiUrl) return defaultApiUrl;
+  const trimmed = rawApiUrl.replace(/\/+$/, '');
+  return trimmed.endsWith('/api') ? trimmed : `${trimmed}/api`;
+})();
 
 const api = axios.create({
   baseURL,

@@ -91,13 +91,13 @@ const AdminLogin = () => {
           </form>
 
           <p className="mt-5 rounded-xl bg-ink-50 px-4 py-3 text-center text-xs text-ink-500">
-            Demo credentials are pre-filled â€¢ admin@ngo.org / admin123
+            Demo credentials are pre-filled admin@ngo.org / admin123
           </p>
         </div>
 
         <p className="mt-5 text-center text-sm">
           <Link to="/" className="font-semibold text-ink-500 hover:text-brand-600">
-            â† Back to website
+             Back to website
           </Link>
         </p>
       </div>
